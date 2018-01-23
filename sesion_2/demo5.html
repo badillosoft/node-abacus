@@ -1,0 +1,16 @@
+<ul id="lista-usuarios"></ul>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script>
+    $.ajax({
+        url: "http://localhost:3000/users",
+        method: "get",
+        success: result => {
+            console.log(result);
+
+            const ul = document.getElementById("lista-usuarios");
+
+            ul.innerHTML = result.map(user => `<li>${user.username} ${user.email}</li>`).join("");
+        }
+    });
+</script>

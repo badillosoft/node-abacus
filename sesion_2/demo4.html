@@ -1,0 +1,38 @@
+<button id="btn-show">Mostrar imágenes</button>
+
+<input id="txt-link" type="text">
+<button id="btn-add">agregar imagen</button>
+
+<ol id="ol-list"></ol>
+
+<script>
+    const links = [
+        "http://placehold.it/300x300",
+        "http://placehold.it/300x400",
+        "http://placehold.it/400x300",
+    ];
+
+    const btn = document.getElementById("btn-show");
+    const ol = document.getElementById("ol-list");
+
+    btn.onclick = () => {
+        let html = "";
+
+        for (let link of links) {
+            html += `<li><img src="${link}"></li>`;
+        }
+
+        ol.innerHTML = html;
+
+        // ol.innerHTML = links.map(link => `<li><img src="${link}"></li>`).join("");
+    };
+
+    const btn_add = document.getElementById("btn-add");
+    const txt_link = document.getElementById("txt-link");
+
+    btn_add.onclick = () => {
+        const link = txt_link.value;
+
+        links.push(link);
+    };
+</script>

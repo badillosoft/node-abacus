@@ -3,10 +3,16 @@ const express = require("express");
 
 const app = express();
 
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 const users = {};
 
 app.get("/users", (req, res) => {
-    res.send(users);
+    res.send(Object.keys(users).map(key => users[key]));
 });
 
 app.get("/users/new", (req, res) => {
