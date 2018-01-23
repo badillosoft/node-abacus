@@ -1,0 +1,31 @@
+<input id="nombre" type="text" placeholder="escribe tu nombre">
+
+<ul id="lista">
+</ul>
+
+<script>
+    const suggestions = ["manzana", "mango", "maracuya", "melón", "melocotón"];
+
+    window.onload = () => {
+        const input_nombre = document.getElementById("nombre");
+
+        input_nombre.onkeyup = evt => {
+            const text = input_nombre.value;
+
+            console.log("Sugerencias para ", text);
+
+            const s = suggestions.filter(s => {
+                const r = new RegExp(`${text}`);
+                return s.match(r);
+            });
+
+            const ul = document.getElementById("lista");
+
+            ul.innerHTML = s.map(e => `<li>${e}</li>`).join("");
+
+            if (s.length === 0) {
+                ul.innerHTML = "<li>No hay sugerencias :(</li>"
+            }
+        };
+    };
+</script>
