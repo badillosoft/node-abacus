@@ -1,0 +1,1 @@
+console.log(["Adán", "Rogelio", "Simón", "Kevin", "Uriel"][Math.floor(Math.random() * 5)]);
