@@ -1,0 +1,21 @@
+[
+    {
+        "title": "Mole Rojo",
+        "picture": "http://mx.emedemujer.com/wp-content/uploads/sites/5/2016/04/receta41.jpg",
+        "ingredients": [
+            "1 kg. Pollo",
+            "1 Mole Doña María",
+            "100 g. Ajonjolí"
+        ],
+        "description": "Cocer el pollo, vertir el mole y al final el ajonjolí"
+    },
+    {
+        "title": "Gelatina",
+        "picture": "https://t1.rg.ltmcdn.com/es/images/2/3/1/img_gelatina_de_mosaico_42132_paso_1_600.jpg",
+        "ingredients": [
+            "1. Gelatina Gary",
+            "1/4 Taza Leche"
+        ],
+        "description": "Cocer la gelatina."
+    }
+]

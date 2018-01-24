@@ -1,0 +1,27 @@
+{% for recipe in recipes %}
+    <div class="recipe">
+        <h1>{{ recipe.title }}</h1>
+        <img src="{{ recipe.picture }}">
+        <h2>Ingredientes:</h2>
+        <ul>
+            {% for ingredient in recipe.ingredients %}
+            <li>{{ ingredient }}</li>
+            {% endfor %}
+        </ul>
+        <p>{{ recipe.description }}</p>
+    </div>
+{% endfor %}
+
+<style>
+    .recipe {
+        width: 450px;
+        margin: 40px auto 40px auto;
+        padding: 20px;
+
+        box-shadow: 4px 4px 4px 4px rgb(0, 0, 0, 0.5);
+    }
+
+    img {
+        width: 100%;
+    }
+</style>

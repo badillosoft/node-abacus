@@ -1,0 +1,13 @@
+<h1>Mi Aplicación</h1>
+
+<h2>{{ message }}</h2>
+
+{% if message %}
+    <div>{{ message }}</div>
+{% endif %}
+
+<ul>
+{% for item in items %}
+    <li>{{ item }}</li>
+{% endfor %}
+</ul>
