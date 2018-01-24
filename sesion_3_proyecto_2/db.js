@@ -4,13 +4,17 @@ const config = require("./db.config.json");
 let is_connected = false;
 
 function connect() {
-    sql.connect(config, err => {
-        if (err) {
-            console.log(`${err}`);
-            return;
-        }
+    return new Promise((resolve, reject) => {
+        sql.connect(config, err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+    
+            is_connected = true;
 
-        is_connected = true;
+            resolve();
+        });
     });
 }
 

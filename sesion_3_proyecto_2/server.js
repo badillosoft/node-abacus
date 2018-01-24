@@ -4,8 +4,6 @@ const db = require("./db");
 
 const app = express();
 
-db.connect();
-
 app.get("/api/persons/new", (req, res) => {
     const nombre = req.query.nombre;
     const edad = Number(req.query.edad);
@@ -27,6 +25,10 @@ app.get("/api/persons/", (req, res) => {
     })
 });
 
-http.createServer(app).listen(3000, () => {
-    console.log("Server started at http://localhost:3000/");
+db.connect().then(() => {
+    http.createServer(app).listen(3000, () => {
+        console.log("Server started at http://localhost:3000/");
+    });
+}).catch(err => {
+    console.log(err);
 });
