@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New User Test</title>
+</head>
+<body>
+    <div class="form">
+        <h1>User Login</h1>
+        <form action="/login" method="get">
+            <label for="username">Username</label><br>
+            <input id="username" name="username" type="text" placeholder="username"><br>
+            
+            <label for="password">Password</label><br>
+            <input id="password" name="password" type="password" placeholder="password"><br>
+    
+            <input type="submit" value="send">
+        </form>
+    </div>
+
+    <style>
+        .form {
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+
+            padding: 20px;
+
+            margin: 80px auto 80px auto;
+        }
+
+        form input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        form input[type=submit] {
+            width: 310px;
+            height: 40px;
+
+            background-color: transparent;
+            
+            border-radius: 4px;
+            border-color: rgba(92, 172, 209, 0.753);
+            border-style: solid;
+        }
+
+        form input[type=submit]:hover {
+            background-color: rgba(92, 172, 209, 0.753);
+            border-color: rgba(22, 95, 129, 0.931);
+        }
+        
+        form input[type=submit]:active {
+            background-color: rgba(22, 95, 129, 0.931);
+            border-color: rgba(92, 172, 209, 0.753);
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+</body>
+</html>

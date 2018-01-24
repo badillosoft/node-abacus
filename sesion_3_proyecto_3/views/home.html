@@ -1,0 +1,32 @@
+<h1>{{ error }}</h1>
+
+<textarea name="" id="" cols="30" rows="10"></textarea>
+<button>post</button>
+
+<div id="posts">
+    {% for post in posts %} 
+    <div>
+        <h2>{{ post.USERNAME }} <small>{{ post.DATE }}</small></h2>
+        <p>{{ post.CONTENT }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    setInterval(() => {
+        $.ajax({
+            url: "http://localhost:3000/api/posts",
+            dataType: "json",
+            success: posts => {
+                document.getElementById("posts").innerHTML = posts.map(post => {
+                    return `
+                        <div>
+                            <h2>${post.USERNAME} <small>${post.DATE}</small></h2>
+                            <p>${post.CONTENT}</p>
+                        </div>
+                    `;
+                }).join("");
+            }
+        })
+    }, 10000);
+</script>
