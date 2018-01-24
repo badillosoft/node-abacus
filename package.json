@@ -1,0 +1,13 @@
+{
+    "name": "abacus",
+    "description": "Simple project",
+    "author": {
+        "name": "Alan Badillo Salas",
+        "email": "badillo.soft@hotmail.com",
+        "url": "http://github.com/badillosoft"
+    },
+    "version": "1.0.0",
+    "scripts": {
+        "start": "sesion_3_db/test_3.js"
+    }
+}
