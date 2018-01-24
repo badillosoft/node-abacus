@@ -1,0 +1,29 @@
+<div class="form">
+    <form action="/api/persons/new" method="get">
+        <input name="redirect" id="redirect" type="hidden" value="1">
+        <label for="nombre">Nombre</label>
+        <input name="nombre" id="nombre" type="text"><br>
+        <label for="edad">Edad</label>
+        <input name="edad" id="edad" type="number" min="0" max="80"><br>
+        <label for="Sexo">Sexo</label>
+        <select name="sexo" id="sexo">
+            <option value="Hombre" selected>Hombre</option>
+            <option value="Mujer">Mujer</option>
+        </select><br>
+        <label for="Salario">Salario</label>
+        <input name="salario" id="salario" type="number" min="0" max="100000"><br>
+        <input type="submit">
+    </form>
+</div>
+
+<style>
+    .form {
+        width: 400px;
+        margin: 80px auto 0px auto;
+    }
+
+    input, select {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+</style>
