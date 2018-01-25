@@ -9,5 +9,11 @@
     "version": "1.0.0",
     "scripts": {
         "start": "sesion_3_db/test_3.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.18.2",
+        "express": "^4.16.2",
+        "express-session": "^1.15.6",
+        "express-sessions": "^1.0.6"
     }
 }
