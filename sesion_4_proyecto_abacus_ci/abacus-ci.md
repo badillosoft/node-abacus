@@ -61,13 +61,13 @@ Operaciones:
 
 Tabla **Productos** (*productos*)
 
-- sku
-- proveedor
-- descripcion
-- d_tipo
-- d_alto
-- d_ancho
-- d_profundidad
+- sku           VARCHAR(20)  : (UNIQUE, PRIMARY KEY, NOT NULL)
+- proveedor     VARCHAR(60)  : (NOT NULL)
+- descripcion   VARCHAR(256) : (NOT NULL)
+- d_tipo        VARCHAR(20)  : (NOT NULL)
+- d_alto        VARCHAR(20)  : (NOT NULL)
+- d_ancho       VARCHAR(20)  : (NOT NULL)
+- d_profundidad VARCHAR(20)  : (NOT NULL)
 
 Tabla **Almacen** (*almacen*)
 

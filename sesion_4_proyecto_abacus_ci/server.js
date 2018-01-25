@@ -1,8 +1,14 @@
 const http = require("http");
 const express = require("express");
+const session = require("express-session");
 const router = require("./router");
 
 const app = express();
+
+app.use(session({
+    secret: "CAT-DOG",
+    cookie: {}
+}));
 
 app.get("/empleado/producto/ingresar", router.empleado_ingresar_producto);
 app.get("/empleado/producto/entregar", router.empleado_entregar_producto);

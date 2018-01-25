@@ -36,7 +36,17 @@ function insertar_producto(producto) {
                 return;
             }
 
-            ps.execute(producto, (err, result) => {
+            const data = {
+                sku: producto.sku,
+                proveedor: producto.proveedor,
+                descripcion: producto.descripcion,
+                d_tipo: producto.dimensiones.tipo,
+                d_alto: producto.dimensiones.alto,
+                d_ancho: producto.dimensiones.ancho,
+                d_profundidad: producto.dimensiones.profundidad,
+            }
+
+            ps.execute(data, (err, result) => {
                 if (err) {
                     reject(err);
                     return;

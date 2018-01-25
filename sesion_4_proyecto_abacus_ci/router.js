@@ -43,6 +43,14 @@ function proveedor_registrar_producto(req, res) {
     const d_ancho = req.query.d_ancho;
     const d_profundidad = req.query.d_profundidad;
 
+    if (req.session.rol !== "proveedor" && req.session.id_proveedor !== proveedor) {
+        res.send({
+            error: true,
+            info: "Invalid Access"
+        });
+        return;
+    }
+
     const producto = {
         sku,
         proveedor,
