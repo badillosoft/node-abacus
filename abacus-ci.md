@@ -421,7 +421,105 @@ function incrementar_existencias(sku) {
                 return;
             }
 
-            ps.execute({ sku, id_empleado, operacion, balance }, (err, result) => {
+            ps.execute({ sku }, (err, result) => {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+
+                ps.unprepare(() => {
+                    resolve(result);
+                });
+            });
+        });
+    });
+}
+
+function decrementar_existencias(sku) {
+    return new Promise((resolve, reject) => {
+        const ps = new sql.PreparedStatement();
+
+        ps.input("sku", sql.NVarChar);
+        
+        const quey = `UPDATE almacen
+            SET existencias=existencias-1
+            WHERE sku=@sku
+        `;
+
+        ps.prepare(query, err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            ps.execute({ sku }, (err, result) => {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+
+                ps.unprepare(() => {
+                    resolve(result);
+                });
+            });
+        });
+    });
+}
+
+function validacion_empleado(id_empleado, sku, operacion) {
+    return new Promise((resolve, reject) => {
+        const ps = new sql.PreparedStatement();
+
+        ps.input("id_empleado", sql.NVarChar);
+        ps.input("sku", sql.NVarChar);
+        ps.input("operacion", sql.NVarChar);
+        
+        const quey = `INSERT INTO validaciones_empleado
+            (id_empleado, sku, fecha, operacion)
+            VALUES (@id_empleado, @sku, GETDATE(), @operacion)
+        `;
+
+        ps.prepare(query, err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            ps.execute({ id_empleado, sku, operacion }, (err, result) => {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+
+                ps.unprepare(() => {
+                    resolve(result);
+                });
+            });
+        });
+    });
+}
+
+function registro_proveedor(id_proveedor, id_empleado, sku, operacion) {
+    return new Promise((resolve, reject) => {
+        const ps = new sql.PreparedStatement();
+
+        ps.input("id_proveedor", sql.NVarChar);
+        ps.input("id_empleado", sql.NVarChar);
+        ps.input("sku", sql.NVarChar);
+        ps.input("operacion", sql.NVarChar);
+        
+        const quey = `INSERT INTO registro_proveedores
+            (id_proveedor, id_empleado, sku, fecha, operacion)
+            VALUES (@id_proveedor, @id_empleado, @sku, GETDATE(), @operacion)
+        `;
+
+        ps.prepare(query, err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            ps.execute({ id_proveedor, id_empleado, sku, operacion }, (err, result) => {
                 if (err) {
                     reject(err);
                     return;
