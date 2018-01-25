@@ -14,7 +14,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/sesion_3_db/test_3.js",
+            "program": "${workspaceFolder}/sesion_4_proyecto_abacus_ci/server.js",
             "stopOnEntry": true
         }
     ]

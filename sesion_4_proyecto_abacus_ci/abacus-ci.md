@@ -59,7 +59,7 @@ Operaciones:
 
 ## Base de Datos
 
-Tabla **Productos**
+Tabla **Productos** (*productos*)
 
 - sku
 - proveedor
@@ -69,12 +69,12 @@ Tabla **Productos**
 - d_ancho
 - d_profundidad
 
-Tabla **Almacen**
+Tabla **Almacen** (*almacen*)
 
 - sku
 - existencias
 
-Tabla **Registro Almacen**
+Tabla **Registro Almacen** (*registro_almacen*)
 
 - id_empleado
 - sku
@@ -82,7 +82,7 @@ Tabla **Registro Almacen**
 - fecha
 - balance
 
-Tabla **Empleados**
+Tabla **Empleados** (*empleados*)
 
 - id_empleado
 - nombre
@@ -90,14 +90,14 @@ Tabla **Empleados**
 - picture
 - ultima_con
 
-Tabla **Validaciones Empleados**
+Tabla **Validaciones Empleados** (*validaciones_empleado*)
 
 - id_empleado
 - sku
 - fecha
 - operacion
 
-Tabla **Proveedores**
+Tabla **Proveedores** (*proveedores*)
 
 - id_proveedor
 - rol
@@ -105,7 +105,7 @@ Tabla **Proveedores**
 - contacto_telefono
 - logo
 
-Tabla **Registro Proveedores**
+Tabla **Registro Proveedores** (*registro_proveedores*)
 
 - id_proveedor
 - id_empleado
@@ -227,11 +227,11 @@ function entregar_producto(id_empleado, sku) {
     });
 }
 
-function entregar_producto(id_proveedor, id_empleado, sku) {
+function entregar_producto_proveedor(id_proveedor, id_empleado, sku) {
     return db.registro_proveedor(id_proveedor, id_empleado, sku, "entrego");
 }
 
-function recibir_producto(id_proveedor, id_empleado, sku) {
+function recibir_producto_proveedor(id_proveedor, id_empleado, sku) {
     return db.registro_proveedor(id_proveedor, id_empleado, sku, "recibo");
 }
 ~~~
