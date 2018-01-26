@@ -16,7 +16,7 @@ Mujer: Daniela (25 años)
 ...
 ~~~
 
-## Express
+## Express
 
 Crear una API WEB con las siguientes rutas definidas:
 
@@ -40,7 +40,7 @@ GET /api/personas/filtro3?sexo
 > Devuelve de 100 personas falsas aquellas con el sexo definido en el query `sexo`
 ~~~
 
-## MSSQL
+## MSSQL
 
 Crear un programa que se conecte a mssql y cree la tabla usuarios como se describe:
 
