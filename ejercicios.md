@@ -5,7 +5,7 @@ Autor: Alan Badillo Salas
 ## Introductorios
 
 Crear un programa que defina dos números `a = 123` y `b = 581`, crear una variable `c` que contenga el valor más grande
-entre `2 * a * a` y `10 * b` utilizando el operador `?` (`c = condicion ? expresionV : exprF`).
+entre `2 * a * a` y `52 * b` utilizando el operador `?` (`c = condicion ? expresionV : exprF`).
 
 Crear un programa que defina un arreglo vacío llamado `q` el cual deberá ser llenado mediante un ciclo `for` con todos los números
 multiplos de `3`, comenzando en `10` hasta el `1000`.
