@@ -25,7 +25,7 @@ y otro arreglo con los números impares. (ej. `[1, 2, 3, 4, 5, 6, 7, 8] -> [[2, 
 Crear una función que dado un arreglo de números, devuelva un arreglo de arreglos, de forma que parta el arreglo original de tal
 forma que cada arreglo partido contenga sólo números positivos o sólo números negativos y no haya dos arreglos con números del
 mismo signo consecutivamente.
-(ej. `[1, 2, 3, -1, -2, -3, -4, 5, 6, 7, -8, -9, 10] -> [[1, 2, 3], [-1, -2, -3, -4], [5, 6, 7], [-8, -9], [10]]`)
+(ej. `[1, 2, 3, -1, -2, -3, -4, 5, 6, 7, -8, -9, 10] -> [[1, 2, 3], [-1, -2, -3, -4], [5, 6, 7], [-8, -9], [10]]`) `Puedes usar Math.sign(x)`
 
 Crear una función que reciba un número y un callback y mande a ejecutar la función de callback después de tantos milisegundos 
 como se haya especificado en el número que recibe.
@@ -50,7 +50,7 @@ que contenga el número de iteración y prueba el siguiente código:
 
 ~~~js
 repetir(10, i => {
-  console.log("")
+  console.log(i);
 });
 ~~~
 
